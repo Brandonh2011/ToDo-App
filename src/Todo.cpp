@@ -52,6 +52,7 @@ int main()
 					break;
 				default:		
 					cerr << "Invalid Option." << endl;
+					cout << endl;
 					break;
 			}
 
@@ -107,9 +108,11 @@ void addTask(vector<Task>& tasks)
 	cout << "Enter the task name: ";
 	cin.ignore();
 	getline(cin, taskName);
+	cout << endl;
 
 	tasks.emplace_back(taskName);
-	cout << "Task " << taskName << " added successfully." << endl;
+	cout << taskName << " added successfully." << endl;
+	cout << endl;
 }
 
 void deleteTask(vector<Task>& tasks)
@@ -118,7 +121,7 @@ void deleteTask(vector<Task>& tasks)
 
 	if (tasks.empty())
 	{
-		cout << "No tasks to delete." << endl;
+		cout << "No tasks to display." << endl;
 		cout << endl;
 		return;
 	}
@@ -128,15 +131,18 @@ void deleteTask(vector<Task>& tasks)
 	cout << "Enter the task number to delete: ";
     cin >> index;
     cin.ignore();
+	cout << endl;
 
     if (index < 1 || index > tasks.size()) 
 	{
         cout << "Invalid task number." << endl;
+		cout << endl;
         return;
     }
 
     tasks.erase(tasks.begin() + index - 1);  
     cout << "Task deleted successfully." << endl;
+	cout << endl;
 }
 
 void completeTask(vector<Task>& tasks)
@@ -155,15 +161,18 @@ void completeTask(vector<Task>& tasks)
 	cout << "Enter the task number to complete: ";
 	cin >> index;
 	cin.ignore();
+	cout << endl;
 
 	if (index < 1 || index > tasks.size()) 
 	{
 		cout << "Invalid task number." << endl;
+		cout << endl;
 		return;
 	}
 
 	tasks[index - 1].markDone();
 
 	cout << "Task marked completed." << endl;
+	cout << endl;
 
 }
