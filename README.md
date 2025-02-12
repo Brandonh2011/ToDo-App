@@ -26,6 +26,7 @@ $ git clone https://github.com/Brandonh2011/ToDo-App.git
 $ cd ToDo-App
 $ mkdir bin
 $ g++ -Wall -std=c++11 -Iinclude ./src/* -o ./bin/ToDo-App
+```
 
 ### Run Program:
 
